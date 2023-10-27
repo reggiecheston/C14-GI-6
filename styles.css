@@ -2,19 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
 h1 {
   font-size: 2rem;
   text-align: center;
+  padding: 4rem 2rem 2rem;
 }
 
 h2 {
-  font-size: 1.75rem;
-  text-align: center;
-}
-
-h3 {
   font-size: 1.5rem;
   text-align: center;
 }
@@ -23,7 +20,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 10vh;
+  height: 5vh;
 }
 
 input {
@@ -37,6 +34,8 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  height: 2.25rem;
 }
 
 .game-icons {
@@ -52,6 +51,11 @@ input {
   margin: 1rem;
 }
 
+button > p {
+  position: relative;
+  bottom: 1vh;
+}
+
 .reset-section {
   display: flex;
   align-items: center;
@@ -59,8 +63,10 @@ input {
 }
 
 button {
-  width: 100%;
   height: auto;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0.1);
 }
 
 button:hover {
@@ -77,14 +83,13 @@ button img {
 }
 
 #reset {
-  width: 5vw;
   padding: 0.5rem;
 }
 
 @media (min-width: 426px) {
   .game-icons {
     flex-direction: row;
-    padding: 3rem;
+    padding: 2rem;
   }
 
   button img {
@@ -92,14 +97,14 @@ button img {
   }
 
   .game-icon {
-    margin: 2rem;
+    margin: 1rem;
   }
 }
 
 @media (min-width: 769px) {
   .game-icons {
     flex-direction: row;
-    padding: 4rem;
+    padding: 2rem;
   }
 
   button img {
@@ -108,5 +113,10 @@ button img {
 
   .game-icon {
     margin: 2rem;
+  }
+
+  button > p {
+    position: relative;
+    bottom: 2vh;
   }
 }

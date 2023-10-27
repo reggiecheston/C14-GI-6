@@ -5,6 +5,7 @@ const scissors = document.querySelector("#scissors");
 const choices = [rock, paper, scissors];
 const reset = document.querySelector("#reset");
 const result = document.querySelector("#result");
+const cpuSelection = document.querySelector("#cpuSelection");
 let playerChoice;
 let cpuChoice;
 // let result;
@@ -24,45 +25,68 @@ const lose = function () {
 
 rock.addEventListener("click", function () {
   cpuChoice = choices[Math.trunc(Math.random() * 3)];
-  console.log(cpuChoice);
+
   if (cpuChoice === rock) {
     console.log("Tie");
+
     result.innerHTML = "Draw!";
+    cpuSelection.textContent = "CPU Chose: Rock";
   } else if (cpuChoice === scissors) {
     console.log("You win");
+
     result.innerHTML = "You Win";
+    cpuSelection.textContent = "CPU Chose: Scissors";
     win();
   } else if (cpuChoice === paper) {
     console.log("You lose");
     result.innerHTML = "You Lose";
+    cpuSelection.textContent = "CPU Chose: Paper";
+
     lose();
   }
 });
 
 paper.addEventListener("click", function () {
   cpuChoice = choices[Math.trunc(Math.random() * 3)];
-  console.log(cpuChoice);
+
   if (cpuChoice === paper) {
     console.log("Tie");
+
+    result.innerHTML = "Draw!";
+    cpuSelection.textContent = "CPU Chose: Paper";
   } else if (cpuChoice === rock) {
     console.log("You win");
+
+    result.innerHTML = "You Win";
+    cpuSelection.textContent = "CPU Chose: Rock";
     win();
   } else if (cpuChoice === scissors) {
     console.log("You lose");
+    result.innerHTML = "You Lose";
+    cpuSelection.textContent = "CPU Chose: Scissors";
     lose();
   }
 });
 
 scissors.addEventListener("click", function () {
   cpuChoice = choices[Math.trunc(Math.random() * 3)];
-  console.log(cpuChoice);
+
   if (cpuChoice === scissors) {
     console.log("Tie");
+
+    result.innerHTML = "Draw!";
+    cpuSelection.textContent = "CPU Chose: Scissors";
   } else if (cpuChoice === paper) {
     console.log("You win");
+
+    result.innerHTML = "You Win";
+    cpuSelection.textContent = "CPU Chose: Paper";
     win();
   } else if (cpuChoice === rock) {
     console.log("You lose");
+
+    result.innerHTML = "You Lose";
+    cpuSelection.textContent = "CPU Chose: Rock";
     lose();
   }
 });
@@ -72,11 +96,13 @@ reset.addEventListener("click", function () {
   cpuScore.value = "CPU: " + 0;
   playerScore.dataset.value = 0;
   cpuScore.dataset.value = 0;
+  result.innerHTML = "";
+  cpuSelection.textContent = "";
 });
 
 // paper.addEventListener("click", function () {
 //   cpuChoice = choices[Math.trunc(Math.random() * 3) + 1];
-//   console.log(cpuChoice);
+//
 //   if (playerChoice == cpuChoice) {
 //     return "Draw";
 //   } else if (cpuChoice == "rock") {
@@ -126,7 +152,7 @@ reset.addEventListener("click", function () {
 
 // rock.addEventListener("click", function () {
 //   cpuChoice = choices[Math.trunc(Math.random() * 3) + 1];
-//   console.log(cpuChoice);
+//
 //   if (cpuChoice === rock) {
 //     console.log("Tie");
 //   } else if (cpuChoice === scissors) {
@@ -138,7 +164,7 @@ reset.addEventListener("click", function () {
 
 // paper.addEventListener("click", function () {
 //   cpuChoice = choices[Math.trunc(Math.random() * 3) + 1];
-//   console.log(cpuChoice);
+//
 //   if (cpuChoice === rock) {
 //     console.log("You win");
 //   } else if (cpuChoice === scissors) {
